@@ -1,0 +1,2 @@
+workon OpenCV-3.4.4-py3
+pip install pyzbar

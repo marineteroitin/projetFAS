@@ -1,0 +1,1 @@
+python lectureCodeBarre.py --image barcode_example.png

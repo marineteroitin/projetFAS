@@ -1,0 +1,4 @@
+workon OpenCV-3.4.4-py3
+ipython
+import cv2
+print(cv2.__version__)

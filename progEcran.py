@@ -52,8 +52,8 @@ def setText(texte):
         	cpt += 1
         	bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))
 
-setText("Hello world\nThis is an LCD test")
+setText("Hello world\nTest check")
 setRGB(0,128,64)
 time.sleep(2)
 setRGB(0,255,0)
-setText("Bye bye, this should wrap onto next line")
+#setText("Bye bye, this should wrap onto next line")

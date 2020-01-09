@@ -34,26 +34,20 @@ def textCommand(cmd):
 # le retour a la ligne
 def setText(texte):
 	textCommand(0x01)#effacer l'écran
-	time.sleep(.05)
+	time.sleep(1)
 	textCommand(0x08 | 0x04) # display on, no cursor
 	textCommand(0x28) # 2 lignes
 	time.sleep(.05)
 	cpt = 0
 	ligne = 0
-    	for c in texte:
-        	if c == '\n' or cpt == 16:
-            		cpt = 0
-            		ligne += 1
-            		if ligne == 2:
-                		break #arrete le for
-            		textCommand(0xc0)
-            		if c == '\n':
-                		continue
-        	cpt += 1
-        	bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))
-
-setText("Hello world\nTest check")
-setRGB(0,128,64)
-time.sleep(2)
-setRGB(0,255,0)
-#setText("Bye bye, this should wrap onto next line")
+	for c in texte:
+		if c == '\n' or cpt == 16:
+			cpt = 0
+			ligne += 1
+			if ligne == 2:
+				break #arrete le for
+			textCommand(0xc0)
+			if c == '\n':
+				continue
+		cpt += 1
+		bus.write_byte_data(DISPLAY_TEXT_ADDR,0x40,ord(c))

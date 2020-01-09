@@ -8,8 +8,11 @@ def prendrePhoto():
 	time.sleep(3) #temps d'attente avant de prendre la photo en secondes
 	camera = picamera.PiCamera() 
 	camera.resolution = (2592,1944) #resolution max de notre type de caméra
-	camera.capture(str(datetime.datetime.now())+'.jpg') #prise de la photo avec renommage dans str
+	a = camera.capture('photoCodeBarre.jpg') #prise de la photo en la nomant
+	return a 
 
-print("execution de prendre photo")
 prendrePhoto()
+
+
+
 
